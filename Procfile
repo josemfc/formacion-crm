@@ -1,1 +1,1 @@
-web: gunicorn iep.wsgi
+web: gunicorn formacion.wsgi

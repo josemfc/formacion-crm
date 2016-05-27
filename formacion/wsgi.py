@@ -13,7 +13,7 @@ import sys
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
-path = '/home/tecnologiajf/formacion-crm'
+path = '/home/tecnologials/formacion-crm'
 if path not in sys.path:
 	sys.path.append(path)
 
