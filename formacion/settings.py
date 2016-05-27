@@ -25,19 +25,25 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 
+					'.formacion-crm.herokuapp.com',
+					'.campusiep.com',
+					'.udeasturas.org',
+					'.centro-virtual.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-	'faq.apps.FaqConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'faq.apps.FaqConfig',
+	'django_cleanup',						# Para gestionar archivos
+	'storages',								# Para gestionar archivos FTP u online
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -85,6 +91,10 @@ DATABASES = {
 		'PORT': '5433'
 	}
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
