@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">	<!-- Mobile friendly -->
+		<meta name="author" content="José María Fernández Campos" />
+		{% load staticfiles %}
+		
+		<title>Formación CRM</title>
+		<link rel="icon" type="image/png" href="{% static 'faq/img/favicon.png' %}">
+		
+		<!-- CSS includes -->
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous" />
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'faq/css/style.css' %}" />
+		
+		<!-- JavaScript Includes 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" defer></script>
+		<script>window.jQuery || document.write('<script src="{% static 'faq/js/vendor/jquery-1.12.0.min.js' %}" defer><\/script>')</script>
+		<script src="{% static 'faq/js/vendor/jquery.init.js' %}" defer></script>
+        <script src="{% static 'faq/js/main.js' %}" defer></script>-->
+	</head>
+
+	<body>
+		<div class="header clearfix">
+			<span class="fa-stack fa-3x pull-left">
+				<i class="fa fa-circle fa-stack-2x color-cua"></i>
+				<i class="fa fa-question fa-stack-1x"></i>
+			</span>
+			
+			<h1 class="pull-left"> <a href="{% url 'faq:index' %}"><span class="tit-header">Formación CRM</span></a></h1>
+		</div>
+		
+		<!-- Static navbar -->
+		<div class="header">
+			<div class="miga">
+				<span><strong>F.A.Q.</strong></span>
+			</div>
+		</div>
+		
+		<div class="container row">
+			<!-- Bloque principal -->
+			<article id="contenido" class="panel-body col-xs-12 col-sm-8 col-sm-push-3 col-lg-6 col-lg-push-3">
+				{% block content %}{% endblock %}
+			</article>
+			
+			
+			<!-- Menú izquierdo flotante (se debe mostrar a la derecha, pero abajo en xs) -->
+			<aside id="derecha" class="col-xs-12 col-sm-3 col-sm-pull-8 col-lg-2 col-lg-pull-6">
+				<h2>Formulario</h2>
+			</aside>
+		</div>
+			
+		<!-- Pie de páginal -->
+		<footer class="footer">
+			<div class="container">
+				<p>Grupo Asturias Digital</p>
+			</div>
+		</footer>
+	</body>
+</html>
