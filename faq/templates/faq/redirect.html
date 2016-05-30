@@ -1,0 +1,25 @@
+{% extends 'faq/base.html' %}
+
+{% block content %}
+<div class="col-xs-8 col-xs-offset-2">
+	<h2><i class="fa fa-check-square-o" aria-hidden="true"></i> Su solicitud se ha enviado correctamente. Volviendo al inicio...</h2>
+	<br>
+	
+	<a href="{% url 'faq:index' %}">Pulsa aquí si tu navegador no te redirecciona automáticamente.</a>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>		<!-- Redireccionar con JQuery -->
+		var django = django || {};					// jquery.init.js
+		django.jQuery = jQuery.noConflict(true);
+	
+		(function($) { // < start of closure // within this block, $ = django.jQuery
+			$(document).ready(function() {
+				setTimeout(function() {
+					window.location.href = '{% url "faq:index" %}'
+				}, 3000);
+			});
+		})(django.jQuery); // passes django.jQuery as parameter to closure block
+	</script>
+</div>
+{% endblock %}
+
