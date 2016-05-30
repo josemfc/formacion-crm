@@ -9,4 +9,9 @@ urlpatterns = [
 	url(r'^$', views.index),
     url(r'^admin/', admin.site.urls),
 	url(r'^faq/', include('faq.urls', namespace="faq"))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if not settings.DEBUG:
+	urlpatterns += patterns('',
+		(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+	)
