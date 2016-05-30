@@ -33,6 +33,7 @@ a {
 
 a:hover {
 	color: #d0cc08;
+	text-decoration: none;
 }
 
 .color-cua {
@@ -92,9 +93,8 @@ body .header:nth-child(2) {/*.header {*/
 
 /* Formulario derecho */
 #derecha {
-	margin-left: 1%;
+	margin: 2% 0 5px 0;
 	padding: 22px;
-	margin-top: 2%;
 	border: 1px solid rgb(221, 221, 221);
 }
 
@@ -122,13 +122,23 @@ body .header:nth-child(2) {/*.header {*/
 	margin: auto;
 }
 
-/* Apartado unidades */
+.pensando {
+	display: none;
+	margin-bottom: 2%;
+	margin-left: 45%;
+}
+
+/* Apartado preguntas */
+#contenido > h1 {
+	margin: 3% 0 5% .5em;
+}
+
 .preguntas {
 	background-color: #f1f1f1;
 	border-top: 2px solid #ddd;
 	display: table;
 	margin: 2% 0;
-	width: 100%;
+	width: 98%;
 }
 
 .preguntas > h4 {
@@ -157,4 +167,5 @@ body .header:nth-child(2) {/*.header {*/
 
 .toggle {
 	display: none;
+	padding-bottom: 10px;
 }

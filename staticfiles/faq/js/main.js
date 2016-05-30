@@ -13,5 +13,9 @@ $(document).ready(function(){
 		var $icono = $(this).parent().find('.btn-toggle > .fa');
 		$icono.toggleClass('fa-caret-right fa-caret-down');
 	});
+	
+	$('.btn-amarillo').click(function(e){
+		$(".pensando").show();
+	});
 });
 

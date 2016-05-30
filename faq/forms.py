@@ -8,7 +8,7 @@ class DudasForm (forms.Form):
 	nombre = forms.CharField (label = 'Nombre*', 
 								max_length = 200, 
 								widget=forms.TextInput(attrs={
-									'size': 40,
+									'size': 30,
 									'placeholder': 'Introduzca aquí su nombre',
 								}), 
 							)
@@ -26,6 +26,7 @@ class DudasForm (forms.Form):
 	
 	detalle = forms.CharField(label = 'Detalle*', 
 								widget = forms.Textarea(attrs={
+									'cols':30,
 									'placeholder': 'Detalle aquí su duda o sugerencia',
 								}))
 	
