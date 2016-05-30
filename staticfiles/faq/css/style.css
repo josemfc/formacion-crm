@@ -89,3 +89,72 @@ body .header:nth-child(2) {/*.header {*/
 .miga > span {
     font-size: 1.4em;
 }
+
+/* Formulario derecho */
+#derecha {
+	margin-left: 1%;
+	padding: 22px;
+	margin-top: 2%;
+	border: 1px solid rgb(221, 221, 221);
+}
+
+#derecha > form > ul > li {
+	margin-bottom: 5%;
+}
+
+#derecha > form > ul > li > label {
+	vertical-align: top;
+}
+
+#derecha > form > ul > li:first-child {
+	margin-top: 8%;
+}
+
+.btn-amarillo {
+	background-color: #ede709;
+	border: 0px;
+	border-radius: 0px;
+	color:  #3d3d3d;
+	display: block;
+	font-weight: bold;
+	height: 45px;
+	padding: 12px 40px;
+	margin: auto;
+}
+
+/* Apartado unidades */
+.preguntas {
+	background-color: #f1f1f1;
+	border-top: 2px solid #ddd;
+	display: table;
+	margin: 2% 0;
+	width: 100%;
+}
+
+.preguntas > h4 {
+	cursor: pointer;
+	padding: 2% 2%;
+}
+
+.pregunta {
+	margin-left: .5%;
+}
+
+.pregunta:hover {
+	color: #d0cc08;
+	text-decoration: underline;
+}
+
+.media-heading {
+	color: #666;
+	margin-left: 1%;
+}
+
+.media-heading:hover  {
+	color: #d0cc08;
+	text-decoration: underline;
+}
+
+.toggle {
+	display: none;
+}
