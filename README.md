@@ -1,4 +1,4 @@
 # Formación CRM
 
-Resolución de dudas y recursos sobre el CRM.
+Web con las preguntas más frecuentes sobre el CRM y vídeos explicativos respondiéndolas. Además proporciona un formulario para enviar dudas.
 

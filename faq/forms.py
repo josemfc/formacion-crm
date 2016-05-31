@@ -13,11 +13,11 @@ class DudasForm (forms.Form):
 								}), 
 							)
 
-	TIPOS_DUDAS = ( ('-1', '-- Seleccione un tipo --'), ('0', 'Área comercial'), ('1', 'Área académica'), ('2', 'Registro y Control'),  ('3', 'Área financiera'), ('4', 'Área de marketing'),)
+	TIPOS_DUDAS = ( ('-1', '-- Seleccione un tipo --'), ('0', 'Área comercial'), ('1', 'Área académica'), ('2', 'Registro y Control'),  ('3', 'Área financiera'), ('4', 'Área de marketing'), ('5', 'Otras cuestiones'))
 	tipo = forms.ChoiceField(label = 'Tipo de duda*', 
 										choices = TIPOS_DUDAS, 
 									)
-										
+									
 	email = forms.EmailField(label = 'Correo electrónico*',
 								widget=forms.TextInput(attrs={
 									'size': 30,

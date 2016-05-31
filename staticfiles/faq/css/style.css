@@ -40,6 +40,10 @@ a:hover {
 	color: #ede709;
 }
 
+.color-error {
+	color: #e60000;
+}
+
 .tit-header {
 	color: #fff;
 }
@@ -99,7 +103,7 @@ body .header:nth-child(2) {/*.header {*/
 }
 
 #derecha > form > ul > li {
-	margin-bottom: 5%;
+	margin-bottom: 7%;
 }
 
 #derecha > form > ul > li > label {
