@@ -3,201 +3,47 @@
 {% block content %}
 	<article id="contenido" class="panel-body col-xs-12 col-md-7 col-md-offset-1 col-lg-6 col-lg-offset-2">
 		<h1>Preguntas frecuentes (F.A.Q.)</h1>
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Cómo gestionar alumnos. Características del módulo</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<span class="media-heading">Respuesta</span>
-			</div>
-		</div>
 		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Cómo extraer información: SDI y Expedientes</strong></span>
-			</h4>
-			
-			<div class="toggle row">
-			  <div class="col-xs-10 col-xs-offset-1">
-				<div class="embed-responsive embed-responsive-16by9">
-				  <iframe src="http://wtv.frooze.tv/embed_iep2.php?id=37bdfe5b-182e-11e6-b58e-f2bddc18df1a" allowfullscreen="" class="embed-responsive-item"></iframe>
-				</div>
-			  </div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Gestionar SDI y Expedientes</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 3</span>
+		{% for pregunta in preguntas %}
+			<div class="preguntas">
+				<h4 class="btn-toggle">
+					<i class="fa fa-caret-right"></i>
+					<span class="pregunta"><strong>{{ pregunta.titulo }}</strong></span>
+				</h4>
+				
+				{% if pregunta.recurso != None %}
+					<div class="toggle row">
+					  <div class="col-xs-10 col-xs-offset-1">
+						<div class="embed-responsive embed-responsive-16by9">
+						  <iframe src="{{ pregunta.recurso }}" allowfullscreen="" class="embed-responsive-item"></iframe>
+						</div>
+					  </div>
+					</div>
 					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Cómo Gestionar usuarios dentro del CRM</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 4</span>
+				{% else %}		<!-- Si en lugar de recurso, hay varios apartados con recursos -->
+					<div class="toggle">
 					
-				</div>
+						{% for apartado in pregunta.apartados %}
+							<span>
+							<h5 class="btn-toggle2">
+								<i class="fa fa-angle-right"></i>
+								<span class="pregunta"><strong>{{ apartado.titulo }}</strong></span>
+							</h5>
+							
+							<div class="toggle2 row">
+							  <div class="col-xs-10 col-xs-offset-1">
+								<div class="embed-responsive embed-responsive-16by9">
+								  <iframe src="{{ apartado.recurso }}" allowfullscreen="" class="embed-responsive-item"></iframe>
+								</div>
+							  </div>
+							</div>
+							</span>
+						{% endfor %}
+					</div>
+				{% endif %}
 			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Qué mejoras introduce el Sistema CRM</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 5</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Qué pueden hacer los Usuarios Externos</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 6</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Cómo establecer Alertas y Reglas Post-proceso. Para qué sirven</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 7</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Características del Módulo de Soportes</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 8</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Características del  Módulo Cabeceras y Campañas</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 9</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Para qué un Módulo de Plantillas y Boletines</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 10</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Módulo Estadísticas y Monitores de Sistema: Cómo optimizar el trabajo</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 11</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Cómo se realiza la parametrización de perfiles de usuarios</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 12</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Cómo se gestionan los Programas y convocatorias</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 13</span>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="preguntas">
-			<h4 class="btn-toggle">
-				<i class="fa fa-caret-right"></i>
-				<span class="pregunta"><strong>Módulo Financiero: Ventajas y posibilidades de emplear el módulo en CRM</strong></span>
-			</h4>
-			
-			<div class="toggle">
-				<div class="media-body">
-					<span class="media-heading">Respuesta 14</span>
-					
-				</div>
-			</div>
-		</div>
+		{% endfor %}
 	</article>
-	
 	
 	<!-- Formulario (se debe mostrar a la derecha, pero abajo en xs) -->
 	<aside id="derecha" class="col-xs-8 col-xs-push-2 col-md-4 col-md-push-0 col-lg-3">
@@ -219,8 +65,5 @@
 				<input type="submit" value="Enviar" class="btn-amarillo"/>
 			</span>
 		</form>
-			
 	</aside>
-	 
-
 {% endblock %}

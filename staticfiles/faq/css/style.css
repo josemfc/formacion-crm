@@ -155,17 +155,22 @@ body .header:nth-child(2) {/*.header {*/
 	text-decoration: underline;
 }
 
-.media-heading {
-	color: #666;
-	margin-left: 1%;
-}
-
-.media-heading:hover  {
-	color: #d0cc08;
-	text-decoration: underline;
-}
-
 .toggle {
 	display: none;
 	padding-bottom: 10px;
 }
+
+.toggle2 {
+	display: none;
+	padding-bottom: 10px;
+}
+
+.btn-toggle2 {
+	cursor: pointer;
+	padding: 1% 5%;
+}
+
+/*.btn-toggle2 > strong:hover {
+	color: #d0cc08;
+	text-decoration: underline;
+}*/

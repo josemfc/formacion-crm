@@ -7,6 +7,9 @@ from django.conf import settings
 from faq.models import FuentesJSON
 from faq.forms import *
 
+import urllib.request
+import json
+
 def index(request):
 	if request.method == 'POST':
 		dudas_form = DudasForm(request.POST)
@@ -32,5 +35,14 @@ def index(request):
 			
 	else:   # GET
 		dudas_form = DudasForm()
+		fuente = get_object_or_404(FuentesJSON, nombre = "faq")
 
-		return render(request, 'faq/index.html', { 'dudas_form': dudas_form })
+		response = urllib.request.urlopen(fuente.filename_fuente)
+		preguntas = json.loads(response.read().decode('utf-8'))
+
+		context = {
+				'dudas_form': dudas_form,
+				'preguntas': preguntas
+		}
+		
+		return render(request, 'faq/index.html', context)
